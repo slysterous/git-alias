@@ -31,8 +31,10 @@ Paste the contents of the file into your own ```.gitconfig``` file
 
 One line logs with decorations
 ```olog = log --oneline --graph --decorate```
+
 Add all
 ```aa = add --all```
+
 Pull with rebase
 ```pr = pull --rebase```
 
