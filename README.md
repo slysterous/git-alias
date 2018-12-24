@@ -26,4 +26,5 @@ Either:
   path = git-alias.txt
 ```
 Or:
+
 Paste the contents of the file into your own ```.gitconfig``` file
