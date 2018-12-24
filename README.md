@@ -2,8 +2,8 @@
 I'm sharing the git aliases I came up to use over time.
 
 Index:
-* Git Alias?
-* How to use
+* [Git Alias?](#git-alias?)
+* [How to use](##how-to-use)
 * Example
 * Thanks
 
