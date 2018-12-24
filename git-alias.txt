@@ -1,0 +1,123 @@
+[alias]
+	##
+	# One letter alias for our most frequent commands.
+	#
+	# Guidelines: these aliases do not use options, because we want
+	# these aliases to be easy to compose and use in many ways.
+	##
+
+	a = add
+  	b = branch
+ 	c = commit
+  	d = diff
+  	f = fetch
+  	g = grep
+  	l = log
+  	m = merge
+  	p = pull
+  	r = remote
+  	w = whatchanged
+
+	##
+	# Short aliases for our frequent commands.
+	#
+	# Guidelines:
+	#
+	#  * Generally speaking, the alias should be in the same
+	#    order as the command name followed by its options.
+	#
+	#    * Right: fb = foo --bar
+	#    * Wrong: bf = foo --bar
+	##
+
+	### add ###
+
+  	# add all
+	aa = add --all
+
+	### commit ###
+
+	# commit - amend the tip of the current branch rather than creating a new commit.
+	ca = commit --amend
+
+	# commit - amend the tip of the current branch, and edit the message.
+  	cam = commit --amend --message
+
+	# commit - amend the tip of the current branch, and do not edit the message.
+  	cane = commit --amend --no-edit
+
+	### checkout ###
+
+	# checkout - update the working tree to match a branch or paths. [same as "o" for "out"]
+	co = checkout
+
+	 
+	### log ###
+
+	# log with personal oneline commit taste
+	olog = log --oneline --graph --decorate
+
+	# log with a text-based graphical representation of the commit history.
+	lg = log --graph
+
+	# log with one line per item.
+  	lo = log --oneline
+
+
+	### pull ###
+
+	# pull if a merge can be resolved as a fast-forward, otherwise fail.
+	pf = pull --ff-only
+
+	# pull and rebase
+	pr = pull --rebase
+
+	### rebase ###
+
+	# rebase - forward-port local commits to the updated upstream head.
+  	rb = rebase
+
+	# rebase - continue the rebasing process after resolving a conflict manually and updating the index with the resolution.
+  	rbc = rebase --continue
+
+	# rbi - rebase interactive on our unpushed commits.
+	#
+	# Before we push our local changes, we may want to do some cleanup,
+	# to improve our commit messages or squash related commits together.
+	#
+	# Let's say I've pushed two commits that are related to a new feature and
+	# I have another where I made a spelling mistake in the commit message.
+	# When I run "git rbi" I get dropped into my editor with this:
+	#
+	#     pick 7f06d36 foo
+	#     pick ad544d0 goo
+	#     pick de3083a hoo
+	#
+	# Let's say I want to squash the "foo" and "goo" commits together,
+	# and also change "hoo" to say "whatever". To do these, I change "pick"
+	# to say "s" for squash; this tells git to squash the two together;
+	# I also edit "hoo". I make the file look like:
+	#
+	#     pick 7f06d36 foo
+	#     s ad544d0 goo
+	#     r de3083a whatever
+	# This gives me two new commit messages to edit, which I update.
+	# Now when I push the remote repo host receives two commits
+	#
+	#     3400455 - foo
+	#     5dae0a0 - whatever
+	#
+	rbi = rebase --interactive @{upstream}
+
+	### status ###
+
+	# status with short format instead of full details
+	ss = status --short
+
+	# status with short format and showing branch and tracking info.
+	ssb = status --short --branch
+
+	### ALIAS MANAGEMENT ###
+
+	# Show our defined alias list
+	aliases = "!git config --get-regexp '^alias\\.' | cut -c 7- | sed 's/ / = /'"
