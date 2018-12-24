@@ -18,7 +18,7 @@ Either include the ```git-alias.txt``` or paste the content into your ```.gitcon
 ```bash
 curl -O https://raw.githubusercontent.com/git-alias/master/git-alias.txt
 ```
-Edit your ``.gitconfig``` file and 
+Edit your ```.gitconfig``` file and 
 
 Either:
 ```
