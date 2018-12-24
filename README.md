@@ -38,3 +38,6 @@ Add all
 Pull with rebase
 ```pr = pull --rebase```
 
+Interactive rebase
+```rbi = rebase --interactive @{upstream}```
+
